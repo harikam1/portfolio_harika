@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Mail, Github, Linkedin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, Github, Linkedin, Send, CheckCircle2, AlertCircle, Phone } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 
 export function Contact() {
@@ -71,6 +71,12 @@ export function Contact() {
                 value: "https://github.com/harikam1",
                 href: "https://github.com/harikam1",
               },
+               {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 6302685657",
+    href: "tel:+916302685657",
+  },
             ].map((c) => (
               <a
                 key={c.label}

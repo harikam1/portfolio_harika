@@ -46,7 +46,7 @@ const items = [
     icon: Code2,
     type: "Internship",
     title: "Java Full Stack Developer",
-    place: "Zenkara Tech Solutions",
+    place: "Zenkara Tech Services",
     period: "2026 — Present",
     desc: "Built multiple full-stack applications using Java, Spring Boot, and React.",
     color: "from-neon-cyan to-neon-blue",

@@ -5,6 +5,7 @@ const sections = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "certifications", label: "Certifications" },
   { id: "experience", label: "Journey" },
   { id: "contact", label: "Contact" },
 ];
@@ -14,10 +15,12 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  // ✅ Scroll detection
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
       const y = window.scrollY + 120;
+
       for (const s of sections) {
         const el = document.getElementById(s.id);
         if (el && el.offsetTop <= y && el.offsetTop + el.offsetHeight > y) {
@@ -25,6 +28,7 @@ export function Navbar() {
         }
       }
     };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -32,7 +36,9 @@ export function Navbar() {
 
   const go = (id: string) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -47,14 +53,18 @@ export function Navbar() {
             scrolled ? "shadow-[0_10px_40px_rgba(0,0,0,0.4)]" : ""
           }`}
         >
+          {/* Logo */}
           <button
             onClick={() => go("home")}
             className="font-display text-lg font-bold tracking-tight"
           >
             <span className="text-gradient">YH</span>
-            <span className="ml-1 text-foreground/70">Yellakanti Harika</span>
+            <span className="ml-1 text-foreground/70">
+              Yellakanti Harika
+            </span>
           </button>
 
+          {/* Desktop Menu */}
           <ul className="hidden items-center gap-1 md:flex">
             {sections.map((s) => (
               <li key={s.id}>
@@ -75,26 +85,33 @@ export function Navbar() {
             ))}
           </ul>
 
-          <button
-            onClick={() => go("contact")}
-            className="hidden rounded-xl bg-gradient-to-r from-neon-blue via-neon-purple to-neon-cyan px-4 py-2 text-sm font-medium text-primary-foreground shadow-[0_0_20px_rgba(122,162,255,0.4)] transition-transform hover:scale-105 md:inline-block"
-          >
-            Hire Me
-          </button>
-
+          {/* Mobile Menu Button */}
           <button
             className="rounded-lg p-2 md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="menu"
           >
             <div className="flex h-5 w-6 flex-col justify-between">
-              <span className={`h-0.5 w-full bg-foreground transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
-              <span className={`h-0.5 w-full bg-foreground transition-opacity ${open ? "opacity-0" : ""}`} />
-              <span className={`h-0.5 w-full bg-foreground transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+              <span
+                className={`h-0.5 w-full bg-foreground transition-transform ${
+                  open ? "translate-y-2 rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`h-0.5 w-full bg-foreground transition-opacity ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`h-0.5 w-full bg-foreground transition-transform ${
+                  open ? "-translate-y-2 -rotate-45" : ""
+                }`}
+              />
             </div>
           </button>
         </nav>
 
+        {/* Mobile Dropdown */}
         {open && (
           <div className="glass-strong mt-2 rounded-2xl p-3 md:hidden">
             <ul className="flex flex-col gap-1">
@@ -103,7 +120,9 @@ export function Navbar() {
                   <button
                     onClick={() => go(s.id)}
                     className={`w-full rounded-lg px-3 py-2 text-left text-sm ${
-                      active === s.id ? "bg-white/5 text-foreground" : "text-muted-foreground"
+                      active === s.id
+                        ? "bg-white/5 text-foreground"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {s.label}

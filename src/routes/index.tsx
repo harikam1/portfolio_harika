@@ -10,6 +10,7 @@ import { Contact } from "@/components/Contact";
 import { ParticlesBg } from "@/components/ParticlesBg";
 import { BackToTop } from "@/components/BackToTop";
 import { Loader } from "@/components/Loader";
+import { Certifications } from "@/components/Certifications";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,14 +43,14 @@ function Index() {
         <Skills />
         <Projects />
         <Experience />
-        {/* <Achievements /> */}
+        <Certifications />
         <Contact />
       </main>
       <footer className="border-t border-white/5 py-8 text-center text-xs text-muted-foreground">
         <p>
-          © {new Date().getFullYear()} Yellakanti Harika · Built with{" "}
-          <span className="text-neon-cyan">React</span> &{" "}
-          <span className="text-neon-purple">passion</span>
+          Yellakanti Harika © {new Date().getFullYear()} 
+          {/* <span className="text-neon-cyan">React</span> &{" "}
+          <span className="text-neon-purple">passion</span> */}
         </p>
       </footer>
       <BackToTop />

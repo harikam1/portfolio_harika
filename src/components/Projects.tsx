@@ -15,14 +15,14 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Ride Booking Backend System",
-    desc: "High-performance ride booking system with Redis-based driver matching.",
-    long: "Built a scalable backend for bike/auto ride booking using Spring Boot. Optimized performance by storing active driver locations in Redis cache for fast nearest-driver matching instead of querying the database. Implemented a wallet system to track platform commission for cash and UPI payments, including recharge logic and ride-blocking. Gained strong understanding of real-time system design, layered architecture, and business logic.",
-    tech: ["Java", "Spring Boot", "Redis", "System Design", "MySQL"],
-    github: "",
-    demo: "",
-    gradient: "from-neon-blue to-neon-purple",
-  },
+  title: "Apartment Management System",
+  desc: "Full-stack platform to manage tenants, payments, and announcements.",
+  long: "Built a full-stack web application to manage apartment operations. Implemented JWT-based authentication with role-based access control (admin and tenant). Developed REST APIs using Node.js and MongoDB, and created a clean, responsive React frontend for managing tenants, tracking payments, and posting announcements.",
+  tech: ["React", "Node.js", "MongoDB", "JWT", "REST APIs"],
+  github: "",
+  demo: "",
+  gradient: "from-neon-purple to-neon-cyan",
+},
   {
     title: "AI Chatbot using Rasa",
     desc: "Contextual AI assistant using Rasa NLU and Core.",
@@ -31,6 +31,15 @@ const projects: Project[] = [
     github: "",
     demo: "",
     gradient: "from-neon-cyan to-neon-blue",
+  },
+  {
+    title: "Ride Booking Backend System",
+    desc: "High-performance ride booking system with Redis-based driver matching.",
+    long: "Built a scalable backend for bike/auto ride booking using Spring Boot. Optimized performance by storing active driver locations in Redis cache for fast nearest-driver matching instead of querying the database. Implemented a wallet system to track platform commission for cash and UPI payments, including recharge logic and ride-blocking. Gained strong understanding of real-time system design, layered architecture, and business logic.",
+    tech: ["Java", "Spring Boot", "MySQL"],
+    github: "",
+    demo: "",
+    gradient: "from-neon-blue to-neon-purple",
   },
   {
     title: "PursuitPro Resume Builder",
